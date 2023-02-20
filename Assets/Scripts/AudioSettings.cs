@@ -38,4 +38,3 @@ public class AudioSettings : MonoBehaviour
         PlayerPrefs.Save();
     }
 }
-

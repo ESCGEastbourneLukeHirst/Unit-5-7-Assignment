@@ -8,7 +8,7 @@ public class MusicOnOff : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        AudioListener.volume = 1;
         int musicOn = PlayerPrefs.GetInt("musicOn", 1);
         if (musicOn == 1)
         {
