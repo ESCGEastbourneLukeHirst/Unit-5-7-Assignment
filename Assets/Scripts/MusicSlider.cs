@@ -8,7 +8,7 @@ public class MusicSlider : MonoBehaviour
     public Slider musicSlider;
     public TMP_Text volumeText;
     public AudioMixer musicMixer;
-    public string mixerVolumeParameter;
+    public string musicMixerParameter = "MusicVolume";
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class MusicSlider : MonoBehaviour
     private void SetMusicVolume(float value)
     {
         // Update the music volume in the audio mixer
-        musicMixer.SetFloat(mixerVolumeParameter, Mathf.Log10(value) * 20f);
+        musicMixer.SetFloat(musicMixerParameter, Mathf.Log10(value) * 20f);
 
         // Save the music volume for future use
         PlayerPrefs.SetFloat("MusicVolume", value);
