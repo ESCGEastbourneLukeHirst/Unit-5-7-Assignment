@@ -15,7 +15,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 2156572773202283377}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 6
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -25,7 +25,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music
+  m_Name: Main
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -35,13 +35,14 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 3256d9f844da50945af741210b5eb920
+    name: MyExposedParam 1
   - guid: efa474c43efd19c4bbf31ced58677c2b
     name: MyExposedParam
   m_AudioMixerGroupViews:
   - guids:
-    - 7802e58bb1118634a9a97a6e70e64a9e
-    - d1e27a0dfd3c2124b9a86c2f9d2374e0
     - f547248a8cc4b4e4da6fdf603df2b5ab
+    - d1e27a0dfd3c2124b9a86c2f9d2374e0
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}

@@ -4067,7 +4067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeText: {fileID: 445884561}
   volumeSlider: {fileID: 1852099217}
-  sfxMixer: {fileID: 24100000, guid: a1cde3f197e13e0439ea770716f9f7a8, type: 2}
+  sfxMixer: {fileID: 24100000, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
   sfxMixerParameter: SFXVolume
 --- !u!1 &804061290
 GameObject:
@@ -5341,7 +5341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 297354085}
-  musicText: {fileID: 565192532}
+  volumeText: {fileID: 565192532}
+  musicMixer: {fileID: 24100000, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
+  mixerVolumeParameter: MusicVolume
 --- !u!1 &1062138068
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,7 +7102,7 @@ PrefabInstance:
     - target: {fileID: 1093401419920533620, guid: 032649638a8e49f4ca7383408d423646, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 6603273615296396852, guid: 7ca54441f299c784299c2311d5687920, type: 2}
+      objectReference: {fileID: -537503024436882025, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
     - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -8206,7 +8208,7 @@ AudioSource:
   m_GameObject: {fileID: 2010073098}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3766472844860725151, guid: 7ca54441f299c784299c2311d5687920, type: 2}
+  OutputAudioMixerGroup: {fileID: 2977815069936996523, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
   m_audioClip: {fileID: 8300000, guid: a623a2cffae7eeb42ac6c3acb05eae59, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -8484,7 +8486,7 @@ AudioSource:
   m_GameObject: {fileID: 2055177633}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3766472844860725151, guid: 7ca54441f299c784299c2311d5687920, type: 2}
+  OutputAudioMixerGroup: {fileID: 2977815069936996523, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
   m_audioClip: {fileID: 8300000, guid: 829d6718554b46a44879c061faea2299, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -7,7 +7,6 @@ public class SFXSlider : MonoBehaviour
 {
     public TMP_Text volumeText;
     public Slider volumeSlider;
-    public AudioMixer sfxMixer;
     public string sfxMixerParameter = "SFXVolume";
 
     private void Start()
@@ -16,11 +15,18 @@ public class SFXSlider : MonoBehaviour
         AdjustVolume(volumeSlider.value);
     }
 
-    public void AdjustVolume(float value)
+    private void SetSFXVolume(float value)
     {
-        volumeText.text = value.ToString("0.00");
-        sfxMixer.SetFloat(sfxMixerParameter, Mathf.Log10(value) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", value);
+        // Update the music volume in the audio mixer
+        musicMixer.SetFloat(mixerVolumeParameter, Mathf.Log10(value) * 20f);
+
+        // Save the music volume for future use
+        PlayerPrefs.SetFloat("MusicVolume", value);
+
+        // Save the player preferences immediately
         PlayerPrefs.Save();
+
+        // Update the volume text with the new value
+        volumeText.text = value.ToString("0.00");
     }
 }
