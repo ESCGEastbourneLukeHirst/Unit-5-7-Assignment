@@ -1,12 +1,15 @@
 using System;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
     public static AudioManager instance;
+
+    public float musicVolume;
+    public float sfxVolume;
+
     void Start()
     {
         Play("Background Music");
@@ -22,21 +25,42 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-            DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
-            foreach (Sound s in sounds)
-            {
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.clip = s.clip;
-                s.source.Play();
+        // Set the volume values from PlayerPrefs
+        musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
-                s.source.playOnAwake = s.playOnAwake;
-            }
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.Play();
 
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+            s.source.playOnAwake = s.playOnAwake;
         }
+
+    }
+
+    private void Update()
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.isMusic == true)
+            {
+                s.source.volume = s.volume * musicVolume;
+            }
+            else
+            {
+                s.source.volume = s.volume * sfxVolume;
+            }
+        }
+    }
+
+
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

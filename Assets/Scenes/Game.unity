@@ -1158,65 +1158,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 369870727}
   hoverclip: {fileID: 8300000, guid: a623a2cffae7eeb42ac6c3acb05eae59, type: 3}
---- !u!1001 &1157108681
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 532.10486
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 251.36603
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.7211285
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1093401419920533626, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-      propertyPath: m_Name
-      value: MusicOnOff
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 032649638a8e49f4ca7383408d423646, type: 3}
 --- !u!1 &1489530131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 782906333}
-  MusicOnOff: {fileID: 1986641806}
   isPaused: 0
 --- !u!4 &1741908409
 Transform:
@@ -1669,11 +1609,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979828234}
   m_CullTransparentMesh: 1
---- !u!1 &1986641806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1093401419920533626, guid: 032649638a8e49f4ca7383408d423646, type: 3}
-  m_PrefabInstance: {fileID: 1157108681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2114190813
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicOnOff : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class MusicOnOff : MonoBehaviour
 
     private void Start()
     {
-        AudioListener.volume = 1;
         int musicOn = PlayerPrefs.GetInt("musicOn", 1);
         if (musicOn == 1)
         {
@@ -39,5 +39,9 @@ public class MusicOnOff : MonoBehaviour
         music.Stop();
         PlayerPrefs.SetInt("musicOn", 0);
         PlayerPrefs.Save();
+    }
+    private void Load()
+    {
+        Load();
     }
 }

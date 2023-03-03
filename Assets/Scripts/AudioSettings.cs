@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UnityEngine.Audio;
+using TMPro;
 
 public class AudioSettings : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class AudioSettings : MonoBehaviour
     public TMP_Text volumeText2;
     public Slider volumeSlider1;
     public Slider volumeSlider2;
+    public AudioMixerGroup volumeMixerGroup1;
+    public AudioMixerGroup volumeMixerGroup2;
 
     private void Start()
     {
@@ -23,6 +25,8 @@ public class AudioSettings : MonoBehaviour
 
     private void AdjustVolume(float value, TMP_Text volumeText, int sliderNumber)
     {
+        print("slider value is now " + value + " for slider number " + sliderNumber);
+
         volumeText.text = value.ToString("0.00");
 
         if (sliderNumber == 1)
@@ -35,6 +39,7 @@ public class AudioSettings : MonoBehaviour
             AudioListener.volume = value;
             PlayerPrefs.SetFloat("Volume2", value);
         }
+
 
         PlayerPrefs.Save();
     }
