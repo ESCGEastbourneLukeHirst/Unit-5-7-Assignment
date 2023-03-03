@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class MusicOnOff : MonoBehaviour
 {
     [SerializeField] AudioSource music;
+
+    public static MusicOnOff instance;
 
     private void Start()
     {
@@ -18,6 +19,14 @@ public class MusicOnOff : MonoBehaviour
         {
             music.Stop();
         }
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
     }
     public void OnMusic()
     {
