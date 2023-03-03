@@ -9,8 +9,6 @@ public class AudioSettings : MonoBehaviour
     public TMP_Text volumeText2;
     public Slider volumeSlider1;
     public Slider volumeSlider2;
-    public AudioMixerGroup volumeMixerGroup1;
-    public AudioMixerGroup volumeMixerGroup2;
 
     private void Start()
     {
@@ -31,15 +29,16 @@ public class AudioSettings : MonoBehaviour
 
         if (sliderNumber == 1)
         {
-            AudioListener.volume = value;
+            // Adjust music volume
+            AudioManager.instance.musicVolume = value;
             PlayerPrefs.SetFloat("Volume1", value);
         }
         else if (sliderNumber == 2)
         {
-            AudioListener.volume = value;
+            // Adjust SFX volume
+            AudioManager.instance.sfxVolume = value;
             PlayerPrefs.SetFloat("Volume2", value);
         }
-
 
         PlayerPrefs.Save();
     }
