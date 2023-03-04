@@ -7,7 +7,7 @@ public class MusicSlider : MonoBehaviour
 {
     public Slider musicSlider;
     public TMP_Text volumeText;
-    public AudioMixer musicMixer;
+    public AudioMixerGroup musicMixerGroup;
     public string musicMixerParameter = "MusicVolume";
 
     private void Start()
@@ -18,6 +18,9 @@ public class MusicSlider : MonoBehaviour
         // Add a listener for the slider value change
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
 
+        // Set the initial music volume in the audio mixer
+        musicMixerGroup.audioMixer.SetFloat(musicMixerParameter, Mathf.Log10(musicSlider.value) * 20f);
+
         // Update the volume text with the initial value
         volumeText.text = musicSlider.value.ToString("0.00");
     }
@@ -25,7 +28,7 @@ public class MusicSlider : MonoBehaviour
     private void SetMusicVolume(float value)
     {
         // Update the music volume in the audio mixer
-        musicMixer.SetFloat(musicMixerParameter, Mathf.Log10(value) * 20f);
+        musicMixerGroup.audioMixer.SetFloat(musicMixerParameter, Mathf.Log10(value) * 20f);
 
         // Save the music volume for future use
         PlayerPrefs.SetFloat("MusicVolume", value);
@@ -37,4 +40,5 @@ public class MusicSlider : MonoBehaviour
         volumeText.text = value.ToString("0.00");
     }
 }
+
 

@@ -4066,8 +4066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeText: {fileID: 445884561}
-  sfxSlider: {fileID: 0}
-  musicMixer: {fileID: 0}
+  sfxSlider: {fileID: 1852099217}
+  sfxMixerGroup: {fileID: 2977815069936996523, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
   sfxMixerParameter: SFXVolume
 --- !u!1 &804061290
 GameObject:
@@ -5342,7 +5342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 297354085}
   volumeText: {fileID: 565192532}
-  musicMixer: {fileID: 24100000, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
+  musicMixerGroup: {fileID: -537503024436882025, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
   musicMixerParameter: MusicVolume
 --- !u!1 &1062138068
 GameObject:
@@ -7102,7 +7102,7 @@ PrefabInstance:
     - target: {fileID: 1093401419920533620, guid: 032649638a8e49f4ca7383408d423646, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
+      objectReference: {fileID: -537503024436882025, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
     - target: {fileID: 1093401419920533621, guid: 032649638a8e49f4ca7383408d423646, type: 3}
       propertyPath: m_RootOrder
       value: 6
