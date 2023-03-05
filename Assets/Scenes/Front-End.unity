@@ -5163,6 +5163,7 @@ MonoBehaviour:
   volumeText: {fileID: 565192532}
   musicMixerGroup: {fileID: -537503024436882025, guid: db767431aa65be2489ce3bfac9ec8acd, type: 2}
   musicMixerParameter: MusicVolume
+  audioManager: {fileID: 1331546714}
 --- !u!1 &1062138068
 GameObject:
   m_ObjectHideFlags: 0
@@ -8661,6 +8662,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2782281341920849369, guid: 39cfbde35a3e31f43b2c826f678efb3e, type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 1052690223}
     - target: {fileID: 2782281341920849369, guid: 39cfbde35a3e31f43b2c826f678efb3e, type: 3}
       propertyPath: sfxMixerGroup
       value: 
