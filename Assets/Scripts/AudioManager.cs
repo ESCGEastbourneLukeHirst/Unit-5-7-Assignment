@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,13 +8,17 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    public float musicVolume;
-    public float sfxVolume;
+    public AudioMixerGroup musicMixerGroup;
+    public AudioMixerGroup sfxMixerGroup;
+
+    private float musicVolume = 1f;
+    private float sfxVolume = 1f;
 
     void Start()
     {
         Play("Background Music");
     }
+
     void Awake()
     {
         if (instance == null)
@@ -35,14 +40,19 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.Play();
-
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
             s.source.playOnAwake = s.playOnAwake;
-        }
+            s.source.loop = s.loop;
 
+            // Set the appropriate mixer group for the sound
+            if (s.isMusic)
+            {
+                s.source.outputAudioMixerGroup = musicMixerGroup;
+            }
+            else
+            {
+                s.source.outputAudioMixerGroup = sfxMixerGroup;
+            }
+        }
     }
 
     private void Update()
@@ -60,15 +70,28 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + " Was not able to play! Please ensure you have typed in the correct name!");
+            Debug.LogWarning("Sound: " + name + " was not able to play! Please ensure you have typed in the correct name.");
             return;
         }
         s.source.Play();
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+        PlayerPrefs.SetFloat("MusicVolume", volume);
+        PlayerPrefs.Save();
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxVolume = volume;
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.Save();
     }
 }

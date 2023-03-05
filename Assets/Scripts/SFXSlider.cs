@@ -18,11 +18,11 @@ public class SFXSlider : MonoBehaviour
         // Add a listener for the slider value change
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
 
-        // Set the initial SFX volume in the audio mixer group
-        SetSFXVolume(sfxSlider.value);
-
         // Update the volume text with the initial value
         volumeText.text = sfxSlider.value.ToString("0.00");
+
+        // Set the initial SFX volume in the audio mixer group
+        sfxMixerGroup.audioMixer.SetFloat(sfxMixerParameter, Mathf.Log10(sfxSlider.value) * 20f);
     }
 
     private void SetSFXVolume(float value)
